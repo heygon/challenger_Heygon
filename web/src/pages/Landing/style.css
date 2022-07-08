@@ -1,0 +1,33 @@
+.cardLogin{
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to bottom, var(--primary-light), var(--primary));
+}
+
+.landing .landingCard{
+    height: 80vh;
+    margin-top: 10vh;
+}
+.landing .productMenu{
+    border:solid 1px #fff;
+}
+.landing .productMenu .collection-item:hover{
+    background: linear-gradient(to bottom, var(--primary-light), var(--primary));
+    color:#fff;
+    cursor:pointer;
+}
+.activeItem{
+    background: linear-gradient(to bottom, var(--primary-light), var(--primary));
+    color:#fff;
+    cursor:pointer;
+}
+.landing .sizes .size{
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    overflow: hidden;
+    background: #5c5c5c;
+    color: #fff;
+    padding-top: 12px;
+    cursor:pointer;
+}

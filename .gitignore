@@ -1,0 +1,11 @@
+backend/node_modules
+backend/__test__/coverage
+backend/.DS_Store
+
+backend/yarn-error.log
+
+backend/yarn.lock
+
+web/node_modules/
+
+web/yarn.lock

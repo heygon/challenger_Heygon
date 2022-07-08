@@ -1,0 +1,18 @@
+.cardCadastro{
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to bottom, var(--primary-light), var(--primary));
+}
+.cardCadastro .cardl{
+    padding: 25px;
+    border-radius: 10px;
+    background: #fff;
+    color : var(--gray)
+}
+
+.cardCadastro .cardl h3{
+    text-align: center;
+}
+.cardCadastro .cardl strong{
+    font-size: 12px;
+}

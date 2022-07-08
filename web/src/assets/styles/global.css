@@ -1,0 +1,61 @@
+:root{
+    font-size:40%;
+    --bg : #f0f0f0;
+    --primary : #1267fc;
+    --primary-light : #518ef8;
+    --gray : #424242
+}
+*{
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+
+html, body, #root{
+    height: 100vh;
+}
+
+body{
+    background: var(--bg);
+}
+/* #root{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+body,
+input,
+button,
+textarea{
+
+    font : 300 1.6rem Montserrat
+}
+
+.container{
+    width: 90vw;
+    max-width: 700px;
+}
+
+@media(min-width: 700px){
+    :root{
+        font-size: 62.5%;
+    }
+}
+
+.border-5{
+    border-radius : 5px !important;
+}
+.cursor-pointer{
+    cursor:pointer;
+}
+strong{
+    font-weight: 400;
+}
+a{
+    cursor:pointer;
+    color: var(--gray);
+    text-decoration: none;
+    
+}

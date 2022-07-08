@@ -1,0 +1,38 @@
+version: "3.7"
+services:
+
+  banco:
+    image: postgres:alpine
+    container_name: postgres
+    ports : 
+     - "5433:5432"
+    environment: 
+      POSTGRES_PASSWORD : 1234
+      POSTGRES_DB : devx
+      
+  server:
+    image: node:alpine
+    container_name: server
+    volumes: 
+      - ./backend:/home/node/app
+    ports:
+      - "3678:3000"
+    working_dir: /home/node/app
+    command: npm test 
+    command: npm seed
+    command: npm install
+    command: node src/index.js
+    depends_on:
+      - banco
+  
+  frontend : 
+    image : "node:alpine"
+    container_name: frontend
+    volumes:
+      - ./web:/frontend
+    ports:
+      - "3001:3000"
+    working_dir: /frontend
+    command: npm install
+    command: npm start
+    

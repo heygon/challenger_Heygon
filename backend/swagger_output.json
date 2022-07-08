@@ -1,0 +1,498 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "DevXSolutions",
+    "description": "Api desenvolvida para o desafio DevXSolutions "
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Usuarios",
+      "description": "Endpoints para o controller de usuários"
+    }
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/users/cadastro": {
+      "post": {
+        "tags": [
+          "Usuarios"
+        ],
+        "summary": "Cadastro do usuário",
+        "description": "<h1>Cadastro do usuário</h1>",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "   <h4>Modelo de envio de dados</h4>  ",
+            "type": "object",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "John Doe"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "john@doe.com"
+                },
+                "pass": {
+                  "type": "string",
+                  "example": "123"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna um array com a tag <b>resp</b> e a tag <b>Usuario</b>.<br/> A tag <b>resp</b> informa para o frontend que a requisição deu certo.<br/> A tag <b>Usuario</b> envia os dados do Usuário para serm salvos no banco de dados local do frontend"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Retorna um array com a tag <b>resp</b> e a tag <b>Usuario</b>.<br/> A tag <b>resp</b> informa para o frontend que a requisição deu certo.<br/> A tag <b>Usuario</b> envia os dados do Usuário para serm salvos no banco de dados local do frontend"
+          }
+        }
+      }
+    },
+    "/users/login": {
+      "post": {
+        "tags": [
+          "Usuarios"
+        ],
+        "summary": "Login do usuário",
+        "description": "Login do usuário",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "   <h4>Modelo de envio de dados</h4><br/>   <strong>Id</strong> : Id do usuário<br/>  ",
+            "type": "object",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Id": {
+                  "type": "string",
+                  "example": "2"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna um array com a tag <b>resp</b> e a tag <b>Usuario</b>.<br/> A tag <b>resp</b> informa para o frontend que a requisição deu certo.<br/> A tag <b>Usuario</b> envia os dados do Usuário para serm salvos no banco de dados local do frontend"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Retorna um array com a tag <b>resp</b> e a tag <b>Usuario</b>.<br/> A tag <b>resp</b> informa para o frontend que a requisição deu certo.<br/> A tag <b>Usuario</b> envia os dados do Usuário para serm salvos no banco de dados local do frontend"
+          }
+        }
+      }
+    },
+    "/users/{userId}": {
+      "put": {
+        "tags": [
+          "Usuarios"
+        ],
+        "summary": "Atualizar usuário",
+        "description": "<h1>Atualizar usuário</h1>",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "   <h4>Modelo de envio de dados</h4><br/>   <strong>Id</strong> : Id do usuário<br/>  ",
+            "type": "object",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "John Doe"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "john@doe.com"
+                },
+                "pass": {
+                  "type": "string",
+                  "example": "123"
+                },
+                "avatar": {
+                  "type": "string",
+                  "example": ""
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Usuarios"
+        ],
+        "summary": "Detalhes do usuário",
+        "description": "<h1>Detalhes do usuário</h1>",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "   <h4>Modelo de envio de dados</h4><br/>   <strong>Id</strong> : Id do usuário<br/>  ",
+            "type": "object",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Id": {
+                  "type": "string",
+                  "example": "2"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/products/{userId}": {
+      "delete": {
+        "tags": [
+          "Usuarios"
+        ],
+        "summary": "Remover usuário",
+        "description": "<h1>Remover usuário</h1>",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "   <h4>Modelo de envio de dados</h4><br/>   <strong>Id</strong> : Id do usuário<br/>  ",
+            "type": "object",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Id": {
+                  "type": "string",
+                  "example": "6039af4d0ec187e8db6dfebe"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Produtos"
+        ],
+        "summary": "Atualizar produto",
+        "description": "<h1>Atualizar produto</h1>",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "   <h4>Modelo de envio de dados</h4><br/>   <strong>Id</strong> : Id do produto<br/>  ",
+            "type": "object",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": ""
+                },
+                "description": {
+                  "type": "string",
+                  "example": ""
+                },
+                "price": {
+                  "type": "string",
+                  "example": ""
+                },
+                "images": {
+                  "type": "string",
+                  "example": ""
+                },
+                "status": {
+                  "type": "string",
+                  "example": ""
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Produtos"
+        ],
+        "summary": "Detalhes do produto",
+        "description": "<h1>Detalhes do produto</h1>",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "   <h4>Modelo de envio de dados</h4><br/>   <strong>Id</strong> : Id do produto<br/>  ",
+            "type": "object",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Id": {
+                  "type": "string",
+                  "example": "6039af4d0ec187e8db6dfebe"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/products": {
+      "get": {
+        "tags": [
+          "Produtos"
+        ],
+        "summary": "Listar produtoss",
+        "description": "<h1>Listar produtos</h1>s",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "   <h4>Modelo de envio de dados</h4><br/>   Não é nescessário passar parâmetros para essa rota  ",
+            "type": "object",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Usuarios"
+        ],
+        "summary": "Cadastro do usuário",
+        "description": "<h1>Cadastro do usuário</h1>",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "   <h4>Modelo de envio de dados</h4>  ",
+            "type": "object",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "John Doe"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "john@doe.com"
+                },
+                "pass": {
+                  "type": "string",
+                  "example": "123"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "User": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Jhon Doe edited"
+        },
+        "age": {
+          "type": "number",
+          "example": 29
+        },
+        "parents": {
+          "type": "object",
+          "properties": {
+            "father": {
+              "type": "string",
+              "example": "Simon Doe"
+            },
+            "mother": {
+              "type": "string",
+              "example": "Marie Doe"
+            }
+          }
+        },
+        "diplomas": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "school": {
+                "type": "string",
+                "example": "XYZ University"
+              },
+              "year": {
+                "type": "number",
+                "example": 2020
+              },
+              "completed": {
+                "type": "boolean",
+                "example": true
+              },
+              "internship": {
+                "type": "object",
+                "properties": {
+                  "hours": {
+                    "type": "number",
+                    "example": 290
+                  },
+                  "location": {
+                    "type": "string",
+                    "example": "XYZ Company"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "AddUser": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Jhon Doe"
+        },
+        "age": {
+          "type": "number",
+          "example": 29
+        },
+        "about": {
+          "type": "string",
+          "example": ""
+        }
+      },
+      "required": [
+        "name",
+        "age"
+      ]
+    }
+  }
+}

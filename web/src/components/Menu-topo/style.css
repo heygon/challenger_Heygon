@@ -1,0 +1,9 @@
+.menu{
+    background: linear-gradient(to bottom, var(--primary-light), var(--primary));
+    height: 100vh;
+}
+.menu a{
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+}
